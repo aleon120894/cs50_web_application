@@ -2,3 +2,8 @@ h1 {
    font-size: 14px,
    font-family: arial, sans-serif;
 }
+
+div {
+   font-size: 10px
+   font-family: arial, sans-serif;
+}
