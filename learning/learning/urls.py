@@ -23,5 +23,4 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('search/', include('search.urls')),
-    path('wiki/', include('wiki.urls'))
 ]
