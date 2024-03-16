@@ -9,4 +9,4 @@ class Auction(models.Model):
 
     date = models.DateField(max_length=32)
     status = models.BooleanField()
-    lot = ,models.CharField(max_length=64)
+    lot = models.CharField(max_length=64)
