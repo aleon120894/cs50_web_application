@@ -1,4 +1,5 @@
 from django import forms
 
 class SearchForm(forms.Form):
-    pass
+
+    search_field = forms.CharField()
