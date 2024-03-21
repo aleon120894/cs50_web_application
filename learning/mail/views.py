@@ -60,6 +60,7 @@ def compose(request):
     users.add(request.user)
     users.update(recipients)
     for user in users:
+
         email = Email(
             user=user,
             sender=request.user,

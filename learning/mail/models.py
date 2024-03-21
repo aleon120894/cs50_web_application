@@ -6,7 +6,9 @@ from django.db import models
 class User(AbstractUser):
     pass
 
+
 class Email(models.Model):
+
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="emails")
     sender = models.ForeignKey("User", on_delete=models.PROTECT, related_name="emails_sent")
     recipients = models.ManyToManyField("User", related_name="emails_received")
@@ -17,6 +19,7 @@ class Email(models.Model):
 
     read = models.BooleanField(default=False)
     archived = models.BooleanField(default=False)
+
 
     def serialize(self):
         return {
