@@ -69,6 +69,7 @@ def compose(request):
             read=user == request.user
         )
         email.save()
+
         for recipient in recipients:
             email.recipients.add(recipient)
         email.save()
@@ -107,6 +108,7 @@ def email(request, email_id):
     # Query for requested email
     try:
         email = Email.objects.get(user=request.user, pk=email_id)
+
     except Email.DoesNotExist:
         return JsonResponse({"error": "Email not found."}, status=404)
 
@@ -122,6 +124,7 @@ def email(request, email_id):
         if data.get("archived") is not None:
             email.archived = data["archived"]
         email.save()
+
         return HttpResponse(status=204)
 
     # Email must be via GET or PUT
@@ -132,6 +135,7 @@ def email(request, email_id):
 
 
 def login_view(request):
+
     if request.method == "POST":
 
         # Attempt to sign user in
@@ -152,11 +156,13 @@ def login_view(request):
 
 
 def logout_view(request):
+
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
 
 def register(request):
+
     if request.method == "POST":
         email = request.POST["email"]
 
