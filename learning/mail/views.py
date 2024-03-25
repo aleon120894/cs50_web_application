@@ -17,7 +17,7 @@ def index(request):
 
     # Authenticated users view their inbox
     if request.user.is_authenticated:
-        return render(request, "mail/inbox.html")
+        return render(request, "inbox.html")
 
     # Everyone else is prompted to sign in
     else:
@@ -152,7 +152,7 @@ def login_view(request):
                 "message": "Invalid email and/or password."
             })
     else:
-        return render(request, "mail/login.html")
+        return render(request, "login.html")
 
 
 def logout_view(request):
