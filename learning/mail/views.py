@@ -169,8 +169,9 @@ def register(request):
         # Ensure password matches confirmation
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
+
         if password != confirmation:
-            return render(request, "mail/register.html", {
+            return render(request, "register.html", {
                 "message": "Passwords must match."
             })
 
@@ -180,11 +181,11 @@ def register(request):
             user.save()
         except IntegrityError as e:
             print(e)
-            return render(request, "mail/register.html", {
+            return render(request, "register.html", {
                 "message": "Email address already taken."
             })
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "mail/register.html")
+        return render(request, "register.html")
 
