@@ -23,6 +23,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
+
         else:
             return render(request, "network/login.html", {
                 "message": "Invalid username and/or password."
@@ -32,6 +33,7 @@ def login_view(request):
 
 
 def logout_view(request):
+
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
