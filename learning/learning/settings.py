@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'search',
     'mail',
+    # 'network',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'learning.urls'
 AUTH_USER_MODEL = 'mail.User'
+# AUTH_USER_MODEL = 'network.User'
 
 TEMPLATES = [
     {

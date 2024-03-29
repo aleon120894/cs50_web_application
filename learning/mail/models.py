@@ -15,6 +15,7 @@ class CustomizedUserManager(UserManager):
 
         try:
             return self.get(cognito_id=cognito_id)
+
         except self.model.DoesNotExist:
             pass
 
