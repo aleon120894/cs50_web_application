@@ -28,6 +28,7 @@ def login_view(request):
             return render(request, "network/login.html", {
                 "message": "Invalid username and/or password."
             })
+
     else:
         return render(request, "network/login.html")
 
