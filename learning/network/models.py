@@ -1,14 +1,27 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
-    pass
+    # Define your custom fields here
 
-class Group(models.Model):
+    class Meta:
+        # Define metadata, if any
+        pass
 
-    users = models.ManyToManyField(User, related_name='group_memberships')
-
-class Permission(models.Model):
-
-    users = models.ManyToManyField(User, related_name='user_permissions')
+    # Add unique related_name arguments for groups and user_permissions
+    groups = models.ManyToManyField(
+        Group,
+        verbose_name=_('groups'),
+        blank=True,
+        related_name='network_users_groups',  # Unique related_name for groups
+        related_query_name='user',
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        verbose_name=_('user permissions'),
+        blank=True,
+        related_name='network_users_permissions',  # Unique related_name for user_permissions
+        related_query_name='user',
+    )
