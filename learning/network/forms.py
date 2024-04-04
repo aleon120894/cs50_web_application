@@ -7,4 +7,5 @@ class RegistrationForm(forms.Form):
     password_field = forms.CharField()
 
 class PostForm(forms.Form):
-    pass
+
+    post_field = forms.CharField()
