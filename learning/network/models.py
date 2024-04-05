@@ -25,3 +25,7 @@ class User(AbstractUser):
         related_name='network_users_permissions',  # Unique related_name for user_permissions
         related_query_name='user',
     )
+
+
+class Post:
+    pass
