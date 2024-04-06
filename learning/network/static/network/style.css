@@ -1,16 +1,71 @@
-h1 {
-   font-family: sans-serif;
-   font-size: 50px;
-   float: center;
+/* Reset default browser styles */
+body, h1, h2, p, ul, li, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-div {
-   font-family: sans-serif;
-   font size: 50px;
+/* Basic styling for headings */
+h1, h2 {
+    margin-bottom: 10px;
 }
 
+/* Main container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Menu styles */
 .menu {
-   font-family: sans-serif;
-   font size: 20px;
-   float: left;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Post list styles */
+.posts {
+    border-top: 1px solid #ccc;
+}
+
+.posts h2 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.posts p {
+    margin-bottom: 20px;
 }

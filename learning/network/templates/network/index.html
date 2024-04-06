@@ -4,10 +4,17 @@
 <h1>All Posts</h1>
 
 <div class="menu">
-    <li>Network</li>
-    <li>New Post</li>
+    <li><a href="{% url 'index' %}">Network</a></li>
+    <li><a href="{% url 'new_post_page' %}">New Post</a></li>
     <li>All Posts</li>
-    <li>Account</li>
-    <li>Log Out</li>
+    <li><a href="{% url 'account_page' %}">Account</a></li>
+    <li><a href="{% url 'logout' %}">Log Out</a></li>
+</div>
+
+<div class="posts">
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+    {% endfor %}
 </div>
 {% endblock %}
