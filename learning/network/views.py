@@ -65,3 +65,18 @@ def register(request):
     else:
         return render(request, "network/register.html")
 
+
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'posts/index.html', {'posts': posts})
+
+def add_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('post_list')
+    else:
+        form = PostForm()
+    return render(request, 'posts/add_post.html', {'form': form})
+
