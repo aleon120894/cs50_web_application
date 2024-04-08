@@ -80,3 +80,7 @@ def add_post(request):
         form = PostForm()
     return render(request, 'posts/add_post.html', {'form': form})
 
+
+def account_page(request):
+    return render(request, 'account_page.html')
+
