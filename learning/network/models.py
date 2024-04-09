@@ -18,6 +18,7 @@ class User(AbstractUser):
         related_name='network_users_groups',  # Unique related_name for groups
         related_query_name='user',
     )
+
     user_permissions = models.ManyToManyField(
         Permission,
         verbose_name=_('user permissions'),
