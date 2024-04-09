@@ -3,6 +3,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import User
 
@@ -73,6 +74,7 @@ def post_list(request):
 def add_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
+
         if form.is_valid():
             form.save()
             return redirect('post_list')
@@ -80,7 +82,7 @@ def add_post(request):
         form = PostForm()
     return render(request, 'posts/add_post.html', {'form': form})
 
-
+@login_required
 def account_page(request):
     return render(request, 'account_page.html')
 
