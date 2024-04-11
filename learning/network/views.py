@@ -68,6 +68,7 @@ def register(request):
 
 
 def post_list(request):
+    
     posts = Post.objects.all()
     return render(request, 'posts/index.html', {'posts': posts})
 
