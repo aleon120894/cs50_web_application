@@ -1,8 +1,8 @@
-{% extends "layout.html" %}
-
+<!-- create_post.html -->
+{% extends 'layout.html' %}
+{% block title %}Create Post{% endblock %}
 {% block body %}
-<h1>Add Post</h1>
-
+<h2>Create a New Post</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
