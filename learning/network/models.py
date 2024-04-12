@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
+
     # Define your custom fields here
 
     class Meta:
