@@ -8,6 +8,7 @@ class RegistrationForm(forms.Form):
     password_field = forms.CharField()
 
 class PostForm(forms.ModelForm):
+
     class Meta:
         model = Post
         fields = ['title', 'content']
