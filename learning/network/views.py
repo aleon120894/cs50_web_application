@@ -84,8 +84,10 @@ def add_post(request):
         if form.is_valid():
             form.save()
             return redirect('post_list')
+
     else:
         form = PostForm()
+
     return render(request, 'posts/add_post.html', {'form': form})
 
 @login_required
