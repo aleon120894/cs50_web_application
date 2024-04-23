@@ -37,4 +37,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoader", function() {
    //
+   const loginForm = document.getElementById("login-form");
 });
