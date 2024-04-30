@@ -24,12 +24,14 @@ class User(AbstractUser):
         Permission,
         verbose_name=_('user permissions'),
         blank=True,
+
         related_name='network_users_permissions',  # Unique related_name for user_permissions
         related_query_name='user',
     )
 
 
 class Post(models.Model):
+
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
