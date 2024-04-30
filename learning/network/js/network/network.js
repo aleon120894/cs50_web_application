@@ -36,6 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoader", function() {
-   //
+
    const loginForm = document.getElementById("login-form");
+
+   loginForm.addEventListener("submit", function() {
+
+      event.preventDefault();
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+   });
 });
